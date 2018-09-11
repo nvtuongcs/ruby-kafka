@@ -146,6 +146,10 @@ module Kafka
       if error_code == 0
         # No errors, yay!
       elsif error = ERRORS[error_code]
+        puts "===========================ERRORRRRRRRRRRR====================="
+        puts error
+        puts error_message
+        puts "==============================================================="
         raise error, error_message
       else
         raise UnknownError, "Unknown error with code #{error_code} #{error_message}"
